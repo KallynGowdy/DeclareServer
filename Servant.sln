@@ -10,11 +10,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Servant", "src\DeclareServer\Servant.xproj", "{F4676855-4D52-4769-B3F1-7BC29DA4CEEE}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Servant", "src\Servant\Servant.xproj", "{F4676855-4D52-4769-B3F1-7BC29DA4CEEE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{BC080828-F2C4-4E80-9558-99B4575D7BD7}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Servant.Core", "src\DeclareServer.Core\Servant.Core.xproj", "{33BCE68C-EEC5-4EF6-8ED3-F19464C8799F}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Servant.Core", "src\Servant.Core\Servant.Core.xproj", "{33BCE68C-EEC5-4EF6-8ED3-F19464C8799F}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Servant.Tests.Site", "test\Servant.Tests.Site\Servant.Tests.Site.xproj", "{546FCF77-9182-4410-A2C2-376CA98FDF56}"
 EndProject
