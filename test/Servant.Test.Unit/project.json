@@ -1,6 +1,6 @@
-﻿{
+{
   "version": "1.0.0-*",
-  "description": "DeclareServer.Core Class Library",
+  "description": "Servant.Test.Unit Class Library",
   "authors": [ "Kal" ],
   "tags": [ "" ],
   "projectUrl": "",
@@ -11,7 +11,10 @@
     "System.Linq": "4.0.0-beta-23019",
     "System.Threading": "4.0.10-beta-23019",
     "System.Runtime": "4.0.10-beta-23019",
-    "Microsoft.CSharp": "4.0.0-beta-23019"
+    "Microsoft.CSharp": "4.0.0-beta-23019",
+    "Servant": "1.0.0-*",
+    "Servant.Core": "1.0.0-*",
+    "xunit": "2.1.0-beta4-build3109"
   },
 
   "frameworks": {

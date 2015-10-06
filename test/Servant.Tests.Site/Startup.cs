@@ -20,6 +20,7 @@ using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
 using Microsoft.Framework.Logging.Console;
 using Microsoft.Framework.Runtime;
+using Servant.Core;
 using Servant.Tests.Site.Models;
 using Servant.Tests.Site.Services;
 
@@ -79,6 +80,9 @@ namespace Servant.Tests.Site
             // Add MVC services to the services container.
             services.AddMvc();
 
+            // Add Servant
+            services.AddServant();
+
             // Uncomment the following line to add Web API services which makes it easier to port Web API 2 controllers.
             // You will also need to add the Microsoft.AspNet.Mvc.WebApiCompatShim package to the 'dependencies' section of project.json.
             // services.AddWebApiConventions();
@@ -133,6 +137,73 @@ namespace Servant.Tests.Site
                 // Uncomment the following line to add a route for porting Web API 2 controllers.
                 // routes.MapWebApiRoute("DefaultApi", "api/{controller}/{id?}");
             });
+
+            // Add Servant to the request pipeline, using RouteConfig for defining the routes.
+            //app.UseServant<RouteConfig>();
+
+            // Alternatively, just define the routes inline:
+            app.UseServant(routes =>
+            {
+                // GET: /place/{id}/{url} -> CustomRoute.HandleAsync()
+                routes.Get<CustomRoute>(r => "place" / r.Id / r.Url);
+
+                // GET: /{resource}/{id?} -> ResourceRoute.HandleAsync() -> IdRoute.HandleAsync()
+                routes.Get<ResourceRoute>(r => r.Resource).Route(resourceRoute =>
+                {
+                    string resource = resourceRoute.Result;
+                    switch (resource)
+                    {
+                        case "users":
+                            // User specific routes
+                            resourceRoute.Get<IdRoute>(r => r.Id);
+                            break;
+                    }
+
+                    resourceRoute.Get<IdRoute>(r => r.Id);
+                });
+            });
+        }
+
+        public class CustomRoute : ServantRoute<String>
+        {
+
+            public ServantRoute<string> Id { get; set; }
+
+            public ServantRoute<string> Url { get; set; }
+
+            public override Task<string> HandleAsync()
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public class ResourceRoute : ServantRoute<string>
+        {
+            public ServantRoute<string> Resource { get; set; } 
+
+            public override Task<int> HandleAsync()
+            {
+
+                throw new NotImplementedException();
+            }
+        }
+
+        public class IdRoute : ServantRoute<int>
+        {
+            public string Id { get; set; }
+
+            public override Task<int> HandleAsync()
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public class Controller
+        {
+            public object Handle()
+            {
+                return null;
+            }
         }
     }
 }

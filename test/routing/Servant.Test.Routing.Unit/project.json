@@ -1,6 +1,6 @@
 ﻿{
   "version": "1.0.0-*",
-  "description": "DeclareServer.Core Class Library",
+  "description": "Servant.Test.Routing.Unit Class Library",
   "authors": [ "Kal" ],
   "tags": [ "" ],
   "projectUrl": "",
@@ -15,7 +15,6 @@
   },
 
   "frameworks": {
-    "dnx451": { },
-    "dnxcore50": { }
+    "dotnet": { }
   }
 }
