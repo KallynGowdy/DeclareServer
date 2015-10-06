@@ -10,6 +10,11 @@ namespace Servant.Test.Routing.Unit
     /// </summary>
     public class TestConfigureCoreRoutes
     {
+        public class TestController
+        {
+            
+        }
+
         public TestConfigureCoreRoutes()
         {
             //RouteBuilder = routeBuilder;
@@ -17,9 +22,10 @@ namespace Servant.Test.Routing.Unit
 
         IServantRouteBuilder RouteBuilder { get; }
 
+        [Fact]
         public void Test_Simple_Static_Get_Route_Can_Be_Made()
         {
-            
+            RouteBuilder.Get("static-page").To<TestController>();
         }
 
     }

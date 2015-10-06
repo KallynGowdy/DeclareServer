@@ -32,7 +32,7 @@ Here is the request pipeline:
     1. Request comes in from client                               |                            
     2. Middleware transforms it                           +-------v-------+     +-------------+
     3. Router determines content and controller to hit    |               |     |             |
-    4. Content is retrie^ed from database                 |    Content    +-----+ Auth & Auth |
+    4. Content is retrieved from database                 |    Content    +-----+ Auth & Auth |
     5. Controller transforms content and creates response |               |     |             |
     6. Middleware transforms response                     +-------+-------+     +-------------+
     7. Response is sent to client                                 |                            
