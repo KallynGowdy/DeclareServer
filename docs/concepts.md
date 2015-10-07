@@ -32,3 +32,13 @@ Servant makes maintaining your application easy by providing you with an extensi
 In a lot of new application frameworks, there's this concept of "Convention _over_ configuration". Which essentially means that the framework developer picks the right configuration for you and builds it into the framework. This either makes the framework unable to cope with specific configuration requirements or more difficult due to the documentation around configuration being scarce.
 
 Servant gives you sane configuration defaults if you just want to get going quickly, but also gives you a rich, easy-to-use API for configuring the framework to fit your needs.
+
+This feature is especially important for migrating an existing system to Servant. If you need to keep behavior that was critical to the existing system, it is easy to get Servant to comply. Also, because Servant is built on OWIN, it is easy to relegate Servant to a certain portion of your application, allowing you to keep the old system while working on a new system.
+
+## Is Servant just another MVC Framework?
+
+Considering how popular MVC frameworks are now, that is not a bad question. I would say no, Servant is not a MVC framework, and here's why:
+
+> MVC wasn't designed with web frameworks in mind.
+
+MVC, while a nice, usable pattern, was simply not designed with certain web concepts in mind such as the request-response cycle or routing. As such, frameworks that use the MVC pattern generally suffer from having a less optimized system for handling problems like resource based routing, API discovery, input validation, and most importantly, a security first mindset.

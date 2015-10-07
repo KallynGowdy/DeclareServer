@@ -20,25 +20,3 @@ So, with those "out of the way", we can talk about the two routing APIs that Ser
 The first API is the core routing library. This library is what all other routing in Servant is built on. The goals of this library are to provide a simple, declarative configuration API for setting up routes to different parts of the application and to make automation of route configuration easy for convention based setups.
 
 The second API is the convention routing library. This library seeks to provide a super high-level convention based API for rigging routes to your code while still giving you hooks into the core routing library.
-
-Here is the request pipeline:
-
-    +---------------+          +---------------+          +--------------+                     
-    |               |          |               |          |              |                     
-    |    Request    +---------->   Middleware  +---------->    Router    |                     
-    |               |          |               |          |              |                     
-    +---------------+          +---------------+          +-------+------+                     
-                                                                  |                            
-    1. Request comes in from client                               |                            
-    2. Middleware transforms it                           +-------v-------+     +-------------+
-    3. Router determines content and controller to hit    |               |     |             |
-    4. Content is retrieved from database                 |    Content    +-----+ Auth & Auth |
-    5. Controller transforms content and creates response |               |     |             |
-    6. Middleware transforms response                     +-------+-------+     +-------------+
-    7. Response is sent to client                                 |                            
-                                                                  |                            
-    +---------------+          +---------------+          +-------v-------+                    
-    |               |          |               |          |               |                    
-    |    Response   <----------+   Middleware  <----------+   Controller  |                    
-    |               |          |               |          |               |                    
-    +---------------+          +---------------+          +---------------+                    
