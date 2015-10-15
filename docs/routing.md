@@ -20,3 +20,8 @@ So, with those "out of the way", we can talk about the two routing APIs that Ser
 The first API is the core routing library. This library is what all other routing in Servant is built on. The goals of this library are to provide a simple, declarative configuration API for setting up routes to different parts of the application and to make automation of route configuration easy for convention based setups.
 
 The second API is the convention routing library. This library seeks to provide a super high-level convention based API for rigging routes to your code while still giving you hooks into the core routing library.
+
+
+## Core
+
+The core routing library allows you to define routes just like you would in most any other library, but it also gives you much more control and configuration than you would normally get.
