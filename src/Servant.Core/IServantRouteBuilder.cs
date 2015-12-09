@@ -59,8 +59,6 @@ namespace Servant.Core
 
     public abstract class ServantRoute<TReturn> : ServantRoute
     {
-        protected HttpWebRequest Request { get; }
-
         public static string operator /(ServantRoute<TReturn> m, string s)
         {
             return "";

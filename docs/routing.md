@@ -12,8 +12,8 @@ Routing in Servant is built to be quick, easy, and configurable. There are a cou
   - If you return a response to the client, routes will not get in the way of that and change it up.
   - Unless you specify, routes will not automatically rewrite the URL to point to the canonical endpoint.
 4. Routes in Servant follow a path through content endpoints.
-  - Content endpoints are what they say they are. Places where data is exposed to the outside world.
-  -  Content endpoints are where you talk to your data access layer.
+  - Content endpoints are what they say they are. Places where data is exposed to the services.
+  - Content endpoints are where you talk to your data access layer.
 
 So, with those "out of the way", we can talk about the two routing APIs that Servant provides.
 
@@ -25,3 +25,13 @@ The second API is the convention routing library. This library seeks to provide 
 ## Core
 
 The core routing library allows you to define routes just like you would in most any other library, but it also gives you much more control and configuration than you would normally get.
+
+Let's start with the basics:
+
+What is a route?
+
+A route is an object that defines a _path_ and it's corresponding _target_. Often, routes are used to trigger specific code to run when a certain URL is requested.
+
+How do you define a route with Servant?
+
+Routes in Servant are defined using implementations of the `IServantRouteBuilder` interface. Often, you will create a route using a static URL and bind it to a specific service.

@@ -77,19 +77,22 @@ namespace Servant.Test.Routing.Unit
         {
             // GET: static-page?action={action:string}
             RouteCollection.Get<MessageParams>(m => "static-page" + m.Action).To<TestService>().Handler((s, m) => s.HandleMessage(m));
+            //Assert.Collection(RouteCollection.Routes,
+            //    r => 
+            //    );
         }
 
-        [Fact]
-        public void Test_Get_Route_Can_Be_Made_With_Values_From_Headers()
-        {
-            RouteCollection.GetBinder<MessageParams>(binder =>
-            {
-                return binder.Url("static-page")
-                    .Param(m => m.Id)
-                    .Query("action", m => m.Action)
-                    .Header("X-Header", m => m.Header);
-            }).To<TestService>().Handler((s, m) => s.HandleMessage(m));
-        }
+        //[Fact]
+        //public void Test_Get_Route_Can_Be_Made_With_Values_From_Headers()
+        //{
+        //    RouteCollection.GetBinder<MessageParams>(binder =>
+        //    {
+        //        return binder.Url("static-page")
+        //            .Param(m => m.Id)
+        //            .Query("action", m => m.Action)
+        //            .Header("X-Header", m => m.Header);
+        //    }).To<TestService>().Handler((s, m) => s.HandleMessage(m));
+        //}
 
         [Fact]
         public void Test_Content_Routing()
@@ -138,6 +141,10 @@ namespace Servant.Test.Routing.Unit
             // Route: CommentId
             // Url: {commentId}
             // SubRoutes: []
+
+            // Root Routes
+
+            // Sub Routes
 
         }
     }

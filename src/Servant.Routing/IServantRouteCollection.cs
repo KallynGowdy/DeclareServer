@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq.Expressions;
 
 namespace Servant.Routing
@@ -8,6 +10,11 @@ namespace Servant.Routing
     /// </summary>
     public interface IServantRouteCollection
     {
+        /// <summary>
+        /// Gets the list of routes that this collection contains.
+        /// </summary>
+        IList<IServantRoute> Routes { get; }
+
         /// <summary>
         /// Adds a route that responds to a GET request at the given url.
         /// </summary>

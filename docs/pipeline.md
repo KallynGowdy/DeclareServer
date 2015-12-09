@@ -44,6 +44,13 @@ perform the requested operation in the service.
 
 Servant is built on top of [OWIN](http://owin.org/). Along with that, Servant is designed to accommodate a pipeline that encourages manipulating data through a simple step-by-step process. As you can see from the diagram above, Servant takes eleven major steps to responding to a request.
 
+The pipeline is designed to encourage several major quality attributes:
+
+1. Maintainability; Because every service is decoupled, making changes to the system is very easy.
+2. Testability; Because the system is designed around data flow and manipulation, verifying components work correctly is easy.
+3. Security; Because each component in the system is encapsulated, it allows for architectures that follow the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege).
+4. Performance; Pipelines are very easy to scale. As a result, performance can be cheap to provide.
+
 ### Authentication
 
 The identity of the client is determined as the first step in the process. Essentially, this step exists to retrieve whatever credentials, if any, that the client possesses that prove that it is who it says it is.

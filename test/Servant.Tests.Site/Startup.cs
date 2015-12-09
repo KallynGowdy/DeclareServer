@@ -142,68 +142,68 @@ namespace Servant.Tests.Site
             //app.UseServant<RouteConfig>();
 
             // Alternatively, just define the routes inline:
-            app.UseServant(routes =>
-            {
-                // GET: /place/{id}/{url} -> CustomRoute.HandleAsync()
-                routes.Get<CustomRoute>(r => "place" / r.Id / r.Url);
+            //app.UseServant(routes =>
+            //{
+            //    // GET: /place/{id}/{url} -> CustomRoute.HandleAsync()
+            //    routes.Get<CustomRoute>(r => "place" / r.Id / r.Url);
 
-                // GET: /{resource}/{id?} -> ResourceRoute.HandleAsync() -> IdRoute.HandleAsync()
-                routes.Get<ResourceRoute>(r => r.Resource).Route(resourceRoute =>
-                {
-                    string resource = resourceRoute.Result;
-                    switch (resource)
-                    {
-                        case "users":
-                            // User specific routes
-                            resourceRoute.Get<IdRoute>(r => r.Id);
-                            break;
-                    }
+            //    // GET: /{resource}/{id?} -> ResourceRoute.HandleAsync() -> IdRoute.HandleAsync()
+            //    routes.Get<ResourceRoute>(r => r.Resource).Route(resourceRoute =>
+            //    {
+            //        string resource = resourceRoute.Result;
+            //        switch (resource)
+            //        {
+            //            case "users":
+            //                // User specific routes
+            //                resourceRoute.Get<IdRoute>(r => r.Id);
+            //                break;
+            //        }
 
-                    resourceRoute.Get<IdRoute>(r => r.Id);
-                });
-            });
+            //        resourceRoute.Get<IdRoute>(r => r.Id);
+            //    });
+            //});
         }
 
-        public class CustomRoute : ServantRoute<String>
-        {
+        //public class CustomRoute : ServantRoute<String>
+        //{
 
-            public ServantRoute<string> Id { get; set; }
+        //    public ServantRoute<string> Id { get; set; }
 
-            public ServantRoute<string> Url { get; set; }
+        //    public ServantRoute<string> Url { get; set; }
 
-            public override Task<string> HandleAsync()
-            {
-                throw new NotImplementedException();
-            }
-        }
+        //    public override Task<string> HandleAsync()
+        //    {
+        //        throw new NotImplementedException();
+        //    }
+        //}
 
-        public class ResourceRoute : ServantRoute<string>
-        {
-            public ServantRoute<string> Resource { get; set; } 
+        //public class ResourceRoute : ServantRoute<string>
+        //{
+        //    public ServantRoute<string> Resource { get; set; } 
 
-            public override Task<int> HandleAsync()
-            {
+        //    public override Task<int> HandleAsync()
+        //    {
 
-                throw new NotImplementedException();
-            }
-        }
+        //        throw new NotImplementedException();
+        //    }
+        //}
 
-        public class IdRoute : ServantRoute<int>
-        {
-            public string Id { get; set; }
+        //public class IdRoute : ServantRoute<int>
+        //{
+        //    public string Id { get; set; }
 
-            public override Task<int> HandleAsync()
-            {
-                throw new NotImplementedException();
-            }
-        }
+        //    public override Task<int> HandleAsync()
+        //    {
+        //        throw new NotImplementedException();
+        //    }
+        //}
 
-        public class Controller
-        {
-            public object Handle()
-            {
-                return null;
-            }
-        }
+        //public class Controller
+        //{
+        //    public object Handle()
+        //    {
+        //        return null;
+        //    }
+        //}
     }
 }
