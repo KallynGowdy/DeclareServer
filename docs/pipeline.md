@@ -53,6 +53,8 @@ The pipeline is designed to encourage several major quality attributes:
 
 ### Authentication
 
+[Full Article](./authentication.md)
+
 The identity of the client is determined as the first step in the process. Essentially, this step exists to retrieve whatever credentials, if any, that the client possesses that prove that it is who it says it is.
 
 ### Middleware
