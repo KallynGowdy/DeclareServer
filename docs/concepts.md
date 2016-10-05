@@ -37,8 +37,4 @@ This feature is especially important for migrating an existing system to Servant
 
 ## Is Servant just another MVC Framework?
 
-Considering how popular MVC frameworks are now, that is not a bad question. I would say no, Servant is not a MVC framework, and here's why:
-
-> MVC wasn't designed with web frameworks in mind.
-
-MVC, while a nice, usable pattern, was simply not designed with certain web concepts in mind such as the request-response cycle, routing, and API versioning. As such, frameworks that use the MVC pattern generally suffer from having a less optimized system for handling problems like resource based routing, API discovery, input validation, and most importantly, a security first mindset.
+Nope. Servant doesn't strive to be defined by a design pattern. Instead, Servant is designed to provide a usable and maintainable platform that makes web development simple.
