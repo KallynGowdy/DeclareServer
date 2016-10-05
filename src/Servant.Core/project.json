@@ -1,20 +1,14 @@
-﻿{
+{
   "version": "1.0.0-*",
-  "description": "DeclareServer.Core Class Library",
-  "authors": [ "Kal" ],
-  "tags": [ "" ],
-  "projectUrl": "",
-  "licenseUrl": "",
-
-  "dependencies": {
-    "System.Collections": "4.0.10",
-    "System.Linq": "4.0.0",
-    "System.Threading": "4.0.10",
-    "System.Runtime": "4.0.20",
-    "Microsoft.CSharp": "4.0.0"
+  "buildOptions": {
+    "debugType": "portable"
   },
-
+  "dependencies": {},
   "frameworks": {
-    "dnxcore50": { }
+    "netstandard1.6": {
+      "dependencies": {
+        "NETStandard.Library": "1.6.0"
+      }
+    }
   }
 }
